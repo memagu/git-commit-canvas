@@ -16,6 +16,9 @@ class Canvas:
         if not self.is_inside(x, y):
             raise ValueError("x or y is not inside the canvas")
 
+    def clear(self) -> None:
+        self.data = [[0] * self.width for _ in range(self.height)]
+
     def set_pixel(self, x: int, y: int, weight: int = 1) -> None:
         self.ensure_inside(x, y)
         self._data[y][x] = weight
